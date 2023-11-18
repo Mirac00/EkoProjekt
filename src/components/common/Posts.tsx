@@ -18,7 +18,7 @@ const Posts: React.FC = () => {
 
   return (
     <div className="container">
-        <h3>OOO</h3>
+        <h3>OOO123</h3>
       {posts.map(post => (
         <div key={post.id} className="card mb-3">
           <div className="card-body">
