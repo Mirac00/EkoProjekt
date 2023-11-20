@@ -1,0 +1,9 @@
+main {
+    flex: 1; 
+    padding: 0 20px; 
+    background-image: url('E:\Repozytorium GitHUB\EkoProject\my-app\src\images\bgAll.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed;
+}

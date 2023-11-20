@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { updatePost } from '../../services/postsService';
 import { Post } from '../../models/Post';
+import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface IProps{
     post: Post;
@@ -59,16 +61,22 @@ let Counter:React.FC<IProps> = ({ post }) => {
 
     return(
         <React.Fragment>
-            <h3>Zagłsuj czy bierzesz udział w wydarzeniu już dziś!</h3>
+            <h3>Zagłosuj czy bierzesz udział w wydarzeniu już dziś!</h3>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-4">
-                        <div className="card">
-                            <div className="card-body">
-                                <p className="h3 display-3">Likes: {state.likes}</p>
-                                <button className="btn btn-success m-1" onClick={incr}>increment</button>
-                                <p className="h3 display-3">Dislikes: {state.dislikes}</p>
-                                <button className="btn btn-danger" onClick={dincr}>dncrement</button>
+                    <div className="col-md-1-4">
+                        <div className="card d-inline-block">
+                            <div className="card-body bg-white rounded">
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <FaThumbsUp className="m-2" onClick={incr} style={{cursor: 'pointer', color: state.userVote === 'like' ? 'green' : 'black'}}/>
+                                        <span> {state.likes} </span>
+                                    </div>
+                                    <div>
+                                        <FaThumbsDown className="m-2" onClick={dincr} style={{cursor: 'pointer', color: state.userVote === 'dislike' ? 'red' : 'black'}}/>
+                                        <span> {state.dislikes} </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

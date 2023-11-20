@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <Link className="navbar-brand" to="/">Your App</Link>
+        <Link className="navbar-brand" to="/">Eko Project</Link>
         <button
           className="navbar-toggler"
           type="button"

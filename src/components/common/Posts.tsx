@@ -6,6 +6,7 @@ import UsersActivist from './UsersActivist';
 import Comments from './Comments';
 import Counter from './Counter';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../style/postStyle.css';
 
 const Posts: React.FC = () => {
   let [posts, setPosts] = useState<Post[]>([]);
@@ -23,7 +24,7 @@ const Posts: React.FC = () => {
     <div className="container">
       {posts.map(post => (
         <div key={post.id} className="card mb-3">
-          <div className="card-body">
+          <div className="card-body bg-">
             <UsersActivist userId={post.userId} />
             <h2 className="card-title">{post.title}</h2>
             <p className="card-text">{post.body}</p>

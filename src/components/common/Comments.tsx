@@ -22,7 +22,7 @@ const Comments: React.FC<CommentsProps> = ({ postId }) => {
   return (
     <div>
       {comments.map((comment: Comment) => (
-  <div key={comment.id} className="card mt-3">
+  <div key={comment.id} className="card mt-3 border border-dark rounded">
     <div className="card-body">
       <h3 className="card-title">{comment.name}</h3>
       <p className="card-text">{comment.body}</p>

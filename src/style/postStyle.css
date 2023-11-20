@@ -1,0 +1,5 @@
+.card {
+    --bs-card-border-width: initial;
+    --bs-card-border-color: initial;
+    background-color: white;
+}
