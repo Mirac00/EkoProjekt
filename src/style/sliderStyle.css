@@ -1,0 +1,24 @@
+.carousel{
+    width:80% ;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slider-img{
+    height: 40em;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+@media (max-width: 600px) {
+    .slider-img{
+        height: 10em;
+    }
+}
+
+@media (max-width: 990px) {
+    .slider-img{
+        height: 20em;
+    }
+}

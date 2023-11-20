@@ -1,7 +1,8 @@
 import React from 'react';
-import Navbar from './navbar'; // Import the Navbar component
+import Navbar from './navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../style/layoutStyle.css';
+import Slider from './slider';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,9 +12,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <header style={{ background: '#f5f5f5', padding: '10px 0' }}>
-        <Navbar /> {/* Include the Navbar component here */}
+        <Navbar /> 
       </header>
       <main>
+        <Slider />
         {children}
       </main>
       <footer style={{ background: '#f5f5f5', padding: '10px 0', marginTop: '20px' }}>
