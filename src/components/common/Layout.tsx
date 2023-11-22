@@ -11,7 +11,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <header style={{ background: '#f5f5f5', padding: '10px 0' }}>
+      <header style={{ background: '#f5f5f5' }}>
         <Navbar /> 
       </header>
       <main>

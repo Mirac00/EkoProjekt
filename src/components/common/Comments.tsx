@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getComments } from '../../services/commentsService';
 import { Comment } from '../../models/Comment';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Counter from './Counter';
 
 interface CommentsProps {
   postId: number;
