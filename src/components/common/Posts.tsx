@@ -28,6 +28,7 @@ const Posts: React.FC = () => {
             <UsersActivist userId={post.userId} />
             <h2 className="card-title">{post.title}</h2>
             <p className="card-text">{post.body}</p>
+            <h3>Zagłosuj na wydarzenie</h3>
             <Counter post={post} />
             <AddComment postId={0}/>
             <Comments postId={post.id} />

@@ -28,6 +28,9 @@ function Navbar() {
               <Link to="/" className="nav-link">Strona główna</Link>
             </li>
             <li className="nav-item">
+              <Link to="/activeEvents" className="nav-link">Aktywne Wydarzenia</Link>
+            </li>
+            <li className="nav-item">
               <Link to="/contact" className="nav-link">Kontakt</Link>
             </li>
           </ul>

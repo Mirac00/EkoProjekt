@@ -18,7 +18,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <Slider />
         {children}
       </main>
-      <footer style={{ background: '#f5f5f5', padding: '10px 0', marginTop: '20px' }}>
+      <footer style={{ background: '#f5f5f5', padding: '10px 0' }}>
         <p style={{ margin: '0', padding: '0 20px' }}>Stopka</p>
       </footer>
     </div>
