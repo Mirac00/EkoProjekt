@@ -17,7 +17,7 @@ const Slider: React.FC = () => {
   };
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect} interval={4000} indicators={true} controls={true}>
+    <Carousel activeIndex={index} onSelect={handleSelect} interval={5000} indicators={true} controls={true}>
       {images.map((image, i) => (
         <Carousel.Item key={i}>
           <img

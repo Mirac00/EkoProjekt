@@ -1,25 +1,19 @@
 .carousel{
-    width:80% ;
+    width:70% ;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 .slider-img{
-    height: 50em;
+    width: 80em !important;
+    aspect-ratio: 2.4 / 1;
     margin-left: auto;
     margin-right: auto;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-
-@media (max-width: 990px) {
-    .slider-img{
-        height: 10em;
-    }
-}
-
-@media (max-width: 1600px) {
-    .slider-img{
-        height: 25em;
-    }
+.slider-img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }

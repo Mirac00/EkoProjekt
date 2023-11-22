@@ -1,4 +1,3 @@
-// services/postsService.ts
 import axios from 'axios';
 import { Post } from '../models/Post';
 
@@ -8,7 +7,7 @@ export const getPosts = async (): Promise<Post[]> => {
 };
 
 export const updatePost = async (post: Post): Promise<void> => {
-  console.log('Updating post:', post); // Log the data being sent
+  console.log('Updating post:', post); 
   let response = await axios.put(`https://jsonplaceholder.typicode.com/posts/${post.id}`, post);
-  console.log('Response:', response); // Log the response
+  console.log('Response:', response); 
 };

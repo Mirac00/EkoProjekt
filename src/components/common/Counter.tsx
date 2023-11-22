@@ -10,7 +10,7 @@ interface IProps{
 interface IState{
     likes : number;
     dislikes: number;
-    userVote: 'like' | 'dislike' | null; // Track the user's vote
+    userVote: 'like' | 'dislike' | null; 
 }
 
 let Counter:React.FC<IProps> = ({ post }) => {
