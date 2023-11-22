@@ -20,6 +20,8 @@ const AddComment: React.FC<AddCommentProps> = ({ postId }) => {
       name, 
       email, 
       body: commentBody,
+      likes: 0, 
+      dislikes: 0, 
     };
 
     await addComment(newComment);

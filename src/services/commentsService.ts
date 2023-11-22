@@ -12,6 +12,12 @@ export const addComment = async (comment: Comment): Promise<void> => {
   console.log('Response:', response); 
 };
 
+export const updateComment = async (id: number, comment: Comment): Promise<void> => {
+  console.log('Updating comment:', comment); 
+  let response = await axios.put(`https://jsonplaceholder.typicode.com/comments/${id}`, comment);
+  console.log('Response:', response); 
+};
+
 export const getHighestCommentId = async (): Promise<number> => {
   let comments = await getComments();
   let highestId = Math.max(...comments.map(comment => comment.id));

@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { updatePost } from '../../services/postsService';
+import { updateComment } from '../../services/commentsService';
 import { Post } from '../../models/Post';
-import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
+import { Comment } from '../../models/Comment';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 
 interface IProps{
-    post: Post;
+    post?: Post;
+    comment?: Comment;
 }
 interface IState{
     likes : number;
@@ -13,11 +16,11 @@ interface IState{
     userVote: 'like' | 'dislike' | null; 
 }
 
-let Counter:React.FC<IProps> = ({ post }) => {
+let Counter:React.FC<IProps> = ({ post, comment }) => {
 
     let [state , setState] = useState<IState>({
-        likes : post.likes || 0,
-        dislikes: post.dislikes || 0,
+        likes : post?.likes || comment?.likes || 0,
+        dislikes: post?.dislikes || comment?.dislikes || 0,
         userVote: null
     });
 
@@ -35,9 +38,15 @@ let Counter:React.FC<IProps> = ({ post }) => {
             dislikes: newDislikes,
             userVote: 'like'
         });
-        let updatedPost = { ...post, likes: newLikes, dislikes: newDislikes };
-        await updatePost(updatedPost);
-        console.log('Updated post:', updatedPost);
+        if (post) {
+            let updatedPost = { ...post, likes: newLikes, dislikes: newDislikes };
+            await updatePost(updatedPost);
+            console.log('Updated post:', updatedPost);
+        } else if (comment) {
+            let updatedComment = { ...comment, likes: newLikes, dislikes: newDislikes };
+            await updateComment(comment.id, updatedComment);
+            console.log('Updated comment:', updatedComment);
+        }
     };
 
     let dincr = async (): Promise<void> => {
@@ -54,14 +63,19 @@ let Counter:React.FC<IProps> = ({ post }) => {
             dislikes: newDislikes,
             userVote: 'dislike'
         });
-        let updatedPost = { ...post, likes: newLikes, dislikes: newDislikes };
-        await updatePost(updatedPost);
-        console.log('Updated post:', updatedPost);
+        if (post) {
+            let updatedPost = { ...post, likes: newLikes, dislikes: newDislikes };
+            await updatePost(updatedPost);
+            console.log('Updated post:', updatedPost);
+        } else if (comment) {
+            let updatedComment = { ...comment, likes: newLikes, dislikes: newDislikes };
+            await updateComment(comment.id, updatedComment);
+            console.log('Updated comment:', updatedComment);
+        }
     };
 
     return(
         <React.Fragment>
-            <h3>Zagłosuj czy bierzesz udział w wydarzeniu już dziś!</h3>
             <div className="container">
                 <div className="row">
                     <div className="col-md-1-4">
