@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { getPosts } from '../../services/postsService';
 import { Post } from '../../models/Post';
 import UsersActivist from './UsersActivist';
+import UserAlbums from './UserAlbums';
 import ToDos from './ToDos';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 const Events: React.FC = () => {
   let [events, setEvents] = useState<Post[]>([]);
@@ -23,7 +23,14 @@ const Events: React.FC = () => {
       {events.map(event => (
         <div key={event.id} className="card mb-3 custom-shadow p-3 mb-5 bg-white rounded">
           <div className="card-body bg-">
-            <UsersActivist userId={event.userId} />
+            <div className="row">
+              <div className="col-md-6">
+                <UsersActivist userId={event.userId} />
+              </div>
+              <div className="col-md-6">
+                <UserAlbums userId={event.userId} />
+              </div>
+            </div>
             <h2 className="card-title">{event.title}</h2>
             <p className="card-text">{event.body}</p>
             <ToDos userId={event.userId} />
