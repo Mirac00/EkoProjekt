@@ -1,0 +1,12 @@
+.photos-modal-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+  }
+  
+  .photo-image {
+    margin: 1em;
+    object-fit: cover;
+  }
+  

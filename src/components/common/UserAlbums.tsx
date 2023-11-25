@@ -3,6 +3,8 @@ import { getAlbums } from '../../services/userAlbumsService';
 import { UserAlbum } from '../../models/UserAlbum';
 import { Modal, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Photos from './Photos';
+import '../../style/userAlbumsStyle.css';
 
 const UserAlbums: React.FC<{ userId: number }> = ({ userId }) => {
   let [albums, setAlbums] = useState<UserAlbum[]>([]);
@@ -39,7 +41,9 @@ const UserAlbums: React.FC<{ userId: number }> = ({ userId }) => {
         <Modal.Header closeButton>
           <Modal.Title>{selectedAlbum?.title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>W tym miejscu będzie wyświetlany komponent z zdjęciami przypisanymi do albumu.</Modal.Body>
+        <Modal.Body className="custom-modal-body">
+          <Photos albumId={selectedAlbum?.id || null} />
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Zamknij

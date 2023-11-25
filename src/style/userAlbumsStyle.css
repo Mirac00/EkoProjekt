@@ -1,0 +1,11 @@
+.custom-modal-body {
+    display: inline-block;
+  }
+  @media (min-width: 576px) {
+    .modal-dialog {
+        display: inline-block;
+        width: auto;
+        max-width: 100%;
+    }
+  }
+  
